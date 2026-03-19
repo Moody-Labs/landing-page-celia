@@ -1,0 +1,65 @@
+---
+interface GalleryImage {
+  alt: string
+  src: string
+  label?: string
+  class: string
+}
+
+const images: GalleryImage[] = [
+  {
+    alt: 'Pose hybride signature - extension de cils par Célia C. à Rosières, Ardèche',
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUHiaQvXtCjVASn-lbdIPWVyFfr6xHOKYJO6AbtXDRJj7GRL3yPM_7nKgadejBvR3cW9Z0WhRf3lN9nKQ4ObzGSK6sKQlJRHNXDUGriEKCzjeXqZKYcMxag4cfKWX1h7PqD998Z0p1leryxCevZURNPkojV530T4QLKGxFlJVHo2BgkqqupH2odIN1NxZ7z1IaYzVC8sgeCWXhLbtKGgP0z6BEiQrgpQFFemDBXuzY6mSxUIjwTzvX3uDDkxJXUVjjN5sKNWUQgq4',
+    label: 'Pose Hybride Signature',
+    class: 'md:col-span-2 md:row-span-2',
+  },
+  {
+    alt: "Détail d'un regard sublimé après une pose d'extensions de cils en Ardèche",
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAaTYhWnLFx4uEtJBMAFaqo7dA6-7q5zQTWTO8cKyAvPhHhl3-XuXNvs42SAZ7mZh_J1ONIQrXnn5lte_D8xOiXtR4B_2NtJI4JwBgzTnwYC5JTu2IOxMC1UjLzq9tLVfMW-k78iQyxsz76EMbZqMghwdqtg4jCqLErruIO0tR8jjXg7Cz8Ha1NxToYDkqJBtYMaZ_pRjGxtvomVNNwY_uTjKNXmqGnBTeFdfYkzaFFl3R_OkeynTfENyX_VXbpbTbnVGJp0UxziqQ',
+    class: 'md:col-span-1 md:row-span-1',
+  },
+  {
+    alt: "Institut d'extension de cils de Célia C. à Rosières, ambiance chaleureuse et professionnelle",
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8VhTjWE3nRWA9ne3ze8tpo6a0EEN5uEWx5_HsBCczVNja5cDw8N4tFDj8ilI272eK1dEtVXQfljnDVxPWCNZpUjFe2LgBtMKDpXKyaQ_dNmHnczuS4dQfswMoirvywyHvc4xKCz_xINib37wXMaRPWS2LjKwOrN_YrSiURaUTfgE65-y-CFNTOYuHKfqB6GBtssC3GeEA-yo5iQB7LMJ9cOLDlQOGUZoF67QABxAE6t43hgTUUtr8z_NKkLYEAu39JtBD7PqqFZ0',
+    class: 'md:col-span-1 md:row-span-2',
+  },
+  {
+    alt: 'Mapping de cils pour une pose personnalisée - technicienne certifiée RS6709 à Rosières',
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwACbgd1NhWsh0xmtwH74aHk9YNbJs3dC35R2VToQLo2jCQ27MKcwexj2-bivdUEev182EstTaCN4DqQtWf90_5XTTXzYiyL2QJhkneD6pPmfm46RmlkFzk6VqPzAoHcEa7s6O4cR1tU7uj1rP5YWBQWsKefjW7FVZGP-WcRQGSLO8C3bWGmw5lARzQCbb3GkHGua7mGZd-9SxSopHaPWSOrtfzNJzIcM11qMWGTF-OI3KK8UneJDuFB2Y_tZskbolafkp9OcHy7w',
+    class: 'md:col-span-1 md:row-span-1',
+  },
+]
+---
+
+<section class="py-24 bg-surface" id="realisations">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-4xl text-on-surface">Mes réalisations</h2>
+      <p class="text-on-surface-variant mt-2">Un aperçu de mon travail au quotidien</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
+      {images.map((image) => (
+        <div class:list={[image.class, 'relative overflow-hidden rounded-xl group']}>
+          <img
+            alt={image.alt}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src={image.src}
+          />
+          {image.label && (
+            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+              <span class="text-on-primary font-headline text-xl italic">{image.label}</span>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="https://www.instagram.com/celiac_techniciennedecils07260/" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline underline-offset-8 transition-all inline-flex items-center gap-2 group">
+        Voir plus sur Instagram
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+      </a>
+    </div>
+  </div>
+</section>

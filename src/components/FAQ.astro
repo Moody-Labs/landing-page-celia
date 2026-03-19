@@ -1,0 +1,35 @@
+---
+import { faqEntries } from '../data/faq'
+---
+
+<section class="py-24 bg-surface-container-low" id="faq">
+  <div class="max-w-4xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="text-secondary font-label text-xs tracking-[0.3em] uppercase mb-4 block font-semibold">
+        FAQ
+      </span>
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">
+        Questions fréquentes
+      </h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg font-light leading-relaxed">
+        Tout ce que vous devez savoir sur les extensions de cils à Rosières.
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      {faqEntries.map((entry) => (
+        <details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/10 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-8 py-6 cursor-pointer list-none hover:bg-surface-container-low transition-colors [&::-webkit-details-marker]:hidden">
+            <h3 class="font-medium text-on-surface text-lg leading-snug">{entry.question}</h3>
+            <span class="material-symbols-outlined text-outline shrink-0 transition-transform duration-300 group-open:rotate-180">
+              expand_more
+            </span>
+          </summary>
+          <div class="px-8 pb-6 -mt-1">
+            <p class="text-on-surface-variant leading-relaxed">{entry.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

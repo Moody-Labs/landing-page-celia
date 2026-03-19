@@ -1,11 +1,164 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+import Hero from '../components/Hero.astro'
+import Philosophy from '../components/Philosophy.astro'
+import Services from '../components/Services.astro'
+import Gallery from '../components/Gallery.astro'
+import Institut from '../components/Institut.astro'
+import About from '../components/About.astro'
+import Reviews from '../components/Reviews.astro'
+import Horaires from '../components/Horaires.astro'
+import FAQ from '../components/FAQ.astro'
+import CallToAction from '../components/CallToAction.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
+import JsonLd from '../components/JsonLd.astro'
+import { SEO } from '../data/seo'
+import { faqEntries } from '../data/faq'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: 'Célia C. - Technicienne de Cils',
+  description: SEO.description,
+  telephone: SEO.business.phone,
+  url: SEO.siteUrl,
+  image: ['/images/salon-1.jpg', '/images/celia.jpeg'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SEO.business.address.street,
+    addressLocality: SEO.business.address.locality,
+    postalCode: SEO.business.address.postalCode,
+    addressRegion: SEO.business.address.region,
+    addressCountry: SEO.business.address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SEO.business.geo.latitude,
+    longitude: SEO.business.geo.longitude,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '14:30',
+      closes: '19:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '4',
+    bestRating: '5',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Jennifer' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: "Je vous recommande Célia les yeux fermés ! Elle est très professionnelle et très minutieuse.",
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Sabine' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: "Célia est une professionnelle à l'écoute et accueillante. Le résultat est sublime et très naturel.",
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Alysia' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: "Célia est une professionnelle douce, à l'écoute qui a su adapter la pose de mes cils.",
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Elia' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: "Super technicienne ! Célia a su me conseiller parfaitement selon la forme de mes yeux.",
+    },
+  ],
+  sameAs: [SEO.business.instagram],
+  priceRange: '€€',
+  paymentAccepted: 'Espèces',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Extensions de cils',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Pose Cil à Cil',
+        description: "Extension classique pour un effet naturel, une extension par cil naturel.",
+        price: '70',
+        priceCurrency: 'EUR',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Pose Mixte',
+        description: "Mélange de cil à cil et volume pour un regard texturé et multidimensionnel.",
+        price: '80',
+        priceCurrency: 'EUR',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Volume Russe',
+        description: "Bouquets ultra-fins pour une densité incomparable, technique respectueuse du cil.",
+        price: '90',
+        priceCurrency: 'EUR',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Dépose',
+        description: "Retrait des extensions de cils actuelles.",
+        price: '10',
+        priceCurrency: 'EUR',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Dépose extérieure',
+        description: "Retrait d'extensions posées dans un autre institut.",
+        price: '15',
+        priceCurrency: 'EUR',
+      },
+    ],
+  },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqEntries.map((entry) => ({
+    '@type': 'Question',
+    name: entry.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: entry.answer,
+    },
+  })),
+}
 ---
 
 <Layout>
-	<Welcome />
+  <JsonLd slot="head" schema={localBusinessSchema} />
+  <JsonLd slot="head" schema={faqSchema} />
+  <Navbar />
+  <main class="pt-20">
+    <Hero />
+    <Philosophy />
+    <Services />
+    <Gallery />
+    <Institut />
+    <About />
+    <Reviews />
+    <FAQ />
+    <Horaires />
+    <CallToAction />
+  </main>
+  <Footer />
 </Layout>

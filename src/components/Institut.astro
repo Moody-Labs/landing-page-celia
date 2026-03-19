@@ -1,0 +1,105 @@
+---
+interface InstitutImage {
+  alt: string
+  src: string
+  class: string
+}
+
+const images: InstitutImage[] = [
+  {
+    alt: "Vue d'ensemble de l'institut de Célia, technicienne de cils à Rosières",
+    src: '/images/salon-1.jpg',
+    class: 'col-span-2 row-span-2',
+  },
+  {
+    alt: 'Espace de travail soigné avec lit de pose et éclairage professionnel',
+    src: '/images/salon-2.jpg',
+    class: 'col-span-1 row-span-1',
+  },
+  {
+    alt: "Détail de la décoration chaleureuse de l'institut à Rosières",
+    src: '/images/salon-3.jpg',
+    class: 'col-span-1 row-span-1',
+  },
+]
+---
+
+<section class="py-24 bg-surface-container-low" id="institut">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+      <div>
+        <span class="text-secondary font-label text-xs tracking-[0.3em] uppercase mb-4 block font-semibold">
+          MON INSTITUT
+        </span>
+        <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-8 leading-tight">
+          Un espace pensé pour <span class="italic">votre confort.</span>
+        </h2>
+        <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+          Mon institut d'extensions de cils est situé à <strong class="text-on-surface font-medium">Rosières, dans le sud de l'Ardèche (07260)</strong>.
+          J'ai aménagé un espace intimiste et chaleureux, dédié exclusivement à la pose d'extensions de cils,
+          pour que chaque rendez-vous soit un vrai moment de détente.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed mb-8">
+          Vous êtes accueillie en rendez-vous individuel, dans le calme et la tranquillité.
+          L'hygiène est ma priorité : matériel stérilisé, produits professionnels haut de gamme et
+          un environnement impeccable à chaque prestation. Tout est réuni pour que vous profitiez
+          pleinement de votre pose de cils, en toute sérénité.
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl">sanitizer</span>
+            <span class="text-sm text-on-surface-variant">Hygiène irréprochable</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl">person</span>
+            <span class="text-sm text-on-surface-variant">RDV individuels</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl">verified</span>
+            <span class="text-sm text-on-surface-variant">Produits pro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 grid-rows-[2fr_1fr] gap-3 h-[560px]">
+        <div class="col-span-2 relative overflow-hidden rounded-xl group">
+          <img
+            alt={images[0].alt}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src={images[0].src}
+            loading="lazy"
+          />
+        </div>
+        <div class="relative overflow-hidden rounded-xl group">
+          <img
+            alt={images[1].alt}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src={images[1].src}
+            loading="lazy"
+          />
+        </div>
+        <div class="relative overflow-hidden rounded-xl group">
+          <img
+            alt={images[2].alt}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src={images[2].src}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="w-16 h-[1px] bg-outline-variant/30 mx-auto mb-8"></div>
+      <p class="font-headline text-2xl md:text-3xl italic text-on-surface leading-snug mb-6">
+        Un cocon de douceur au coeur de Rosières
+      </p>
+      <p class="text-on-surface-variant leading-relaxed">
+        Que vous veniez pour une première pose ou un remplissage, vous trouverez ici un cadre
+        soigné où chaque détail compte. Mon institut d'extension de cils en Ardèche vous offre
+        une expérience personnalisée, loin de l'agitation des grandes enseignes.
+        Prenez le temps de prendre soin de vous.
+      </p>
+    </div>
+  </div>
+</section>

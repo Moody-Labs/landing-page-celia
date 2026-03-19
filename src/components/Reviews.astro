@@ -1,0 +1,230 @@
+---
+interface Review {
+  quote: string;
+  name: string;
+  initial: string;
+  stars: number;
+}
+
+const reviews: Review[] = [
+  {
+    quote:
+      "Je vous recommande Célia les yeux fermés ! Elle est très professionnelle et très minutieuse. Elle prend le temps, avant chaque rendez-vous de faire un diagnostic pour savoir ce qui nous convient le mieux. On se sent vraiment écouté et en confiance. L'hygiène est irréprochable.",
+    name: "Jennifer",
+    initial: "J",
+    stars: 5,
+  },
+  {
+    quote:
+      "Célia est une professionnelle à l'écoute et accueillante. Le salon est chaleureux et on s'y sent à l'aise. Travail minutieux, hygiène irréprochable. Le résultat est sublime et très naturel. Je suis ravie et je recommande les yeux fermés !",
+    name: "Sabine",
+    initial: "S",
+    stars: 5,
+  },
+  {
+    quote:
+      "Célia est une professionnelle douce, à l'écoute qui a su adapter la pose de mes cils en fonction de mes attentes et la forme de mes yeux. Je suis très satisfaite de la pose mixte qui met mon regard en valeur ! Merci pour les précieux conseils que ce soit pour le choix de la pose ou pour l'entretien des cils. Le salon décoré et équipé avec soin permet de se sentir à l'aise et d'apprécier le moment.",
+    name: "Alysia",
+    initial: "A",
+    stars: 5,
+  },
+  {
+    quote:
+      "Super technicienne ! Célia a su me conseiller parfaitement selon la forme de mes yeux. Personne très douce et minutieuse dans son travail. Je recommande !! Encore mille merci !!!",
+    name: "Elia",
+    initial: "E",
+    stars: 5,
+  },
+];
+
+const starIcons = Array.from({ length: 5 }, () => "star");
+---
+
+<section class="py-24 bg-surface" id="avis">
+  <div class="max-w-7xl mx-auto px-8">
+    <div
+      class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8"
+    >
+      <div class="max-w-xl">
+        <span
+          class="text-secondary font-label text-xs tracking-[0.3em] uppercase mb-4 block font-semibold"
+        >
+          VOS EXPÉRIENCES
+        </span>
+        <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">
+          Celles qui me font confiance.
+        </h2>
+        <p class="text-on-surface-variant">
+          Découvrez les témoignages de mes clientes.
+        </p>
+      </div>
+
+      <div
+        class="flex items-center gap-4 bg-surface-container-low px-6 py-4 rounded-full"
+      >
+        <div class="flex gap-1 text-secondary">
+          {
+            starIcons.map(() => (
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: 'FILL' 1;"
+              >
+                star
+              </span>
+            ))
+          }
+        </div>
+        <span class="font-bold text-on-surface">5/5</span>
+        <span class="text-outline-variant text-sm">basé sur 10+ avis</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+      {/* Jennifer - grande carte avec image */}
+      <div
+        class="md:col-span-3 lg:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden grid lg:grid-cols-2"
+      >
+        <div class="h-64 lg:h-full">
+          <img
+            class="w-full h-full object-cover"
+            alt="Résultat d'une extension de cils mixte réalisée à l'institut de Célia C. à Rosières, Ardèche"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9JRrXjejQpJYAXYig3H86gKQJrLIrax75RWwtqcMq-pdPBYMN-e_w1seiNcwVUaS5YP6jgN5kP6BYuCiQ0XF1EXoVQ54FoSKP3d-_gkloYpIVQAdqfxkK7eDF_2MFHoq1rSvw8HDwI0Cqo-Axzfcnm4Sc_qtqM_I2nOxBizHXg3xAuGIbT9_JvviGHMcS84g1_7sYkIJTtZA4lgN3ocV4zu7AvBOyBOqIxDcNhCsVxIzxR3TqcUeZ0_bmY3Z36lSZoEFy3ZuUm1o"
+          />
+        </div>
+        <div class="p-8 flex flex-col justify-center">
+          <div class="flex gap-1 text-secondary mb-4">
+            {
+              starIcons.map(() => (
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: 'FILL' 1;"
+                >
+                  star
+                </span>
+              ))
+            }
+          </div>
+          <h4 class="font-headline text-2xl mb-4">Les yeux fermés !</h4>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            "{reviews[0].quote}"
+          </p>
+          <div class="flex items-center gap-4">
+            <div
+              class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold"
+            >
+              {reviews[0].initial}
+            </div>
+            <div>
+              <p class="font-bold text-sm">{reviews[0].name}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sabine - carte default */}
+      <div
+        class="md:col-span-3 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-between"
+      >
+        <div>
+          <div class="flex gap-1 text-secondary mb-4 scale-90 -ml-1">
+            {
+              starIcons.map(() => (
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: 'FILL' 1;"
+                >
+                  star
+                </span>
+              ))
+            }
+          </div>
+          <p class="text-on-surface leading-relaxed italic mb-8">
+            "{reviews[1].quote}"
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold"
+          >
+            {reviews[1].initial}
+          </div>
+          <div>
+            <p class="font-bold text-sm">{reviews[1].name}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Alysia - carte accent */}
+      <div
+        class="md:col-span-3 lg:col-span-5 bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between"
+      >
+        <div>
+          <span class="material-symbols-outlined text-4xl mb-4 opacity-30"
+            >format_quote</span
+          >
+          <p class="text-lg font-headline italic leading-relaxed mb-8">
+            "{reviews[2].quote}"
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-on-primary/10 flex items-center justify-center font-bold"
+          >
+            {reviews[2].initial}
+          </div>
+          <div>
+            <p class="font-bold text-sm">{reviews[2].name}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Elia - carte muted */}
+      <div
+        class="md:col-span-3 lg:col-span-7 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between"
+      >
+        <div>
+          <div class="flex gap-1 text-secondary mb-4 scale-90 -ml-1">
+            {
+              starIcons.map(() => (
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: 'FILL' 1;"
+                >
+                  star
+                </span>
+              ))
+            }
+          </div>
+          <p class="text-on-surface leading-relaxed mb-8">
+            "{reviews[3].quote}"
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold"
+          >
+            {reviews[3].initial}
+          </div>
+          <div>
+            <p class="font-bold text-sm">{reviews[3].name}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a
+        href="https://share.google/AKOnFUdkpLJRt5PEj"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary font-bold hover:underline underline-offset-8 transition-all inline-flex items-center gap-2 group"
+      >
+        Voir plus de témoignages sur Google
+        <span
+          class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          >arrow_right_alt</span
+        >
+      </a>
+    </div>
+  </div>
+</section>
