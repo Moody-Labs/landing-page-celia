@@ -27,7 +27,7 @@ const images: InstitutImage[] = [
 <section class="py-24 bg-surface-container-low" id="institut">
   <div class="max-w-7xl mx-auto px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-      <div>
+      <div data-animate="fade-right">
         <span class="text-secondary font-label text-xs tracking-[0.3em] uppercase mb-4 block font-semibold">
           MON INSTITUT
         </span>
@@ -61,7 +61,7 @@ const images: InstitutImage[] = [
         </div>
       </div>
 
-      <div class="grid grid-cols-2 grid-rows-[2fr_1fr] gap-3 h-[560px]">
+      <div class="grid grid-cols-2 grid-rows-[2fr_1fr] gap-3 h-[560px]" data-animate="fade-left">
         <div class="col-span-2 relative overflow-hidden rounded-xl group">
           <img
             alt={images[0].alt}

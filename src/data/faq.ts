@@ -22,11 +22,11 @@ export const faqEntries: FaqEntry[] = [
   },
   {
     question: "Comment prendre rendez-vous à l'institut à Rosières ?",
-    answer: "Vous pouvez me contacter par téléphone au 06 48 36 22 40 ou par message sur Instagram (@celiac_techniciennedecils07260). Je reçois uniquement sur rendez-vous du lundi au vendredi de 14h30 à 19h00 et le samedi de 9h00 à 18h00.",
+    answer: 'Vous pouvez me contacter par téléphone au <a href="tel:+33648362240" class="text-primary font-medium underline underline-offset-4">06 48 36 22 40</a> ou par message sur <a href="https://www.instagram.com/celiac_techniciennedecils07260/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium underline underline-offset-4">Instagram (@celiac_techniciennedecils07260)</a>. Je reçois uniquement sur rendez-vous du lundi au vendredi de 14h30 à 19h00 et le samedi de 9h00 à 18h00.',
   },
   {
     question: "Où se situe l'institut de Célia C. ?",
-    answer: "Mon institut d'extension de cils est situé Rte de Grangeon, à Rosières (07260), dans le sud de l'Ardèche. L'institut dispose d'un parking gratuit à proximité.",
+    answer: 'Mon institut d\'extension de cils est situé <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rte+de+Grangeon,+07260+Rosières" target="_blank" rel="noopener noreferrer" class="text-primary font-medium underline underline-offset-4">Rte de Grangeon, à Rosières (07260)</a>, dans le sud de l\'Ardèche. L\'institut dispose d\'un parking gratuit à proximité.',
   },
   {
     question: "Combien de temps dure une pose d'extensions de cils ?",

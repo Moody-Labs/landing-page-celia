@@ -44,6 +44,7 @@ const starIcons = Array.from({ length: 5 }, () => "star");
   <div class="max-w-7xl mx-auto px-8">
     <div
       class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8"
+      data-animate
     >
       <div class="max-w-xl">
         <span
@@ -108,15 +109,9 @@ const starIcons = Array.from({ length: 5 }, () => "star");
           <p class="text-on-surface-variant leading-relaxed mb-6">
             "{reviews[0].quote}"
           </p>
-          <div class="flex items-center gap-4">
-            <div
-              class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold"
-            >
-              {reviews[0].initial}
-            </div>
-            <div>
-              <p class="font-bold text-sm">{reviews[0].name}</p>
-            </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-[1px] bg-outline"></div>
+            <p class="font-bold text-sm">{reviews[0].name}</p>
           </div>
         </div>
       </div>
@@ -138,19 +133,14 @@ const starIcons = Array.from({ length: 5 }, () => "star");
               ))
             }
           </div>
+          <h4 class="font-headline text-xl text-on-surface mb-3">Sublime et naturel</h4>
           <p class="text-on-surface leading-relaxed italic mb-8">
             "{reviews[1].quote}"
           </p>
         </div>
-        <div class="flex items-center gap-4">
-          <div
-            class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold"
-          >
-            {reviews[1].initial}
-          </div>
-          <div>
-            <p class="font-bold text-sm">{reviews[1].name}</p>
-          </div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-[1px] bg-outline"></div>
+          <p class="font-bold text-sm">{reviews[1].name}</p>
         </div>
       </div>
 
@@ -162,19 +152,14 @@ const starIcons = Array.from({ length: 5 }, () => "star");
           <span class="material-symbols-outlined text-4xl mb-4 opacity-30"
             >format_quote</span
           >
+          <h4 class="font-headline text-xl mb-3 opacity-80">Un regard sur mesure</h4>
           <p class="text-lg font-headline italic leading-relaxed mb-8">
             "{reviews[2].quote}"
           </p>
         </div>
-        <div class="flex items-center gap-4">
-          <div
-            class="w-10 h-10 rounded-full bg-on-primary/10 flex items-center justify-center font-bold"
-          >
-            {reviews[2].initial}
-          </div>
-          <div>
-            <p class="font-bold text-sm">{reviews[2].name}</p>
-          </div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-[1px] bg-on-primary/70"></div>
+          <p class="font-bold text-sm">{reviews[2].name}</p>
         </div>
       </div>
 
@@ -195,19 +180,14 @@ const starIcons = Array.from({ length: 5 }, () => "star");
               ))
             }
           </div>
+          <h4 class="font-headline text-xl text-on-surface mb-3">Des conseils en or</h4>
           <p class="text-on-surface leading-relaxed mb-8">
             "{reviews[3].quote}"
           </p>
         </div>
-        <div class="flex items-center gap-4">
-          <div
-            class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold"
-          >
-            {reviews[3].initial}
-          </div>
-          <div>
-            <p class="font-bold text-sm">{reviews[3].name}</p>
-          </div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-[1px] bg-outline"></div>
+          <p class="font-bold text-sm">{reviews[3].name}</p>
         </div>
       </div>
     </div>

@@ -1,65 +1,179 @@
 ---
-interface GalleryImage {
-  alt: string
-  src: string
-  label?: string
-  class: string
+interface BeforeAfter {
+  before: string;
+  after: string;
+  alt: string;
+  label: string;
+  technique: string;
 }
 
-const images: GalleryImage[] = [
+const comparisons: BeforeAfter[] = [
   {
-    alt: 'Pose hybride signature - extension de cils par Célia C. à Rosières, Ardèche',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUHiaQvXtCjVASn-lbdIPWVyFfr6xHOKYJO6AbtXDRJj7GRL3yPM_7nKgadejBvR3cW9Z0WhRf3lN9nKQ4ObzGSK6sKQlJRHNXDUGriEKCzjeXqZKYcMxag4cfKWX1h7PqD998Z0p1leryxCevZURNPkojV530T4QLKGxFlJVHo2BgkqqupH2odIN1NxZ7z1IaYzVC8sgeCWXhLbtKGgP0z6BEiQrgpQFFemDBXuzY6mSxUIjwTzvX3uDDkxJXUVjjN5sKNWUQgq4',
-    label: 'Pose Hybride Signature',
-    class: 'md:col-span-2 md:row-span-2',
+    before: "/images/avant-1.jpg",
+    after: "/images/apres-1.jpg",
+    alt: "Avant/après pose cil à cil par Célia C., technicienne de cils à Rosières en Ardèche",
+    label: "Cil à Cil",
+    technique: "Effet naturel",
   },
   {
-    alt: "Détail d'un regard sublimé après une pose d'extensions de cils en Ardèche",
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAaTYhWnLFx4uEtJBMAFaqo7dA6-7q5zQTWTO8cKyAvPhHhl3-XuXNvs42SAZ7mZh_J1ONIQrXnn5lte_D8xOiXtR4B_2NtJI4JwBgzTnwYC5JTu2IOxMC1UjLzq9tLVfMW-k78iQyxsz76EMbZqMghwdqtg4jCqLErruIO0tR8jjXg7Cz8Ha1NxToYDkqJBtYMaZ_pRjGxtvomVNNwY_uTjKNXmqGnBTeFdfYkzaFFl3R_OkeynTfENyX_VXbpbTbnVGJp0UxziqQ',
-    class: 'md:col-span-1 md:row-span-1',
+    before: "/images/avant-1.jpg",
+    after: "/images/apres-1.jpg",
+    alt: "Avant/après pose mixte extension de cils à Rosières (07260), Ardèche",
+    label: "Mixte",
+    technique: "Naturel & dense",
   },
   {
-    alt: "Institut d'extension de cils de Célia C. à Rosières, ambiance chaleureuse et professionnelle",
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8VhTjWE3nRWA9ne3ze8tpo6a0EEN5uEWx5_HsBCczVNja5cDw8N4tFDj8ilI272eK1dEtVXQfljnDVxPWCNZpUjFe2LgBtMKDpXKyaQ_dNmHnczuS4dQfswMoirvywyHvc4xKCz_xINib37wXMaRPWS2LjKwOrN_YrSiURaUTfgE65-y-CFNTOYuHKfqB6GBtssC3GeEA-yo5iQB7LMJ9cOLDlQOGUZoF67QABxAE6t43hgTUUtr8z_NKkLYEAu39JtBD7PqqFZ0',
-    class: 'md:col-span-1 md:row-span-2',
+    before: "/images/avant-1.jpg",
+    after: "/images/apres-1.jpg",
+    alt: "Avant/après volume russe extension de cils par Célia C. à Rosières, Ardèche",
+    label: "Volume Russe",
+    technique: "Densité maximale",
   },
-  {
-    alt: 'Mapping de cils pour une pose personnalisée - technicienne certifiée RS6709 à Rosières',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwACbgd1NhWsh0xmtwH74aHk9YNbJs3dC35R2VToQLo2jCQ27MKcwexj2-bivdUEev182EstTaCN4DqQtWf90_5XTTXzYiyL2QJhkneD6pPmfm46RmlkFzk6VqPzAoHcEa7s6O4cR1tU7uj1rP5YWBQWsKefjW7FVZGP-WcRQGSLO8C3bWGmw5lARzQCbb3GkHGua7mGZd-9SxSopHaPWSOrtfzNJzIcM11qMWGTF-OI3KK8UneJDuFB2Y_tZskbolafkp9OcHy7w',
-    class: 'md:col-span-1 md:row-span-1',
-  },
-]
+];
 ---
 
 <section class="py-24 bg-surface" id="realisations">
   <div class="max-w-7xl mx-auto px-8">
-    <div class="text-center mb-16">
-      <h2 class="font-headline text-4xl text-on-surface">Mes réalisations</h2>
-      <p class="text-on-surface-variant mt-2">Un aperçu de mon travail au quotidien</p>
+    <div class="text-center mb-16" data-animate>
+      <span
+        class="text-secondary font-label text-xs tracking-[0.3em] uppercase mb-4 block font-semibold"
+      >
+        AVANT / APRÈS
+      </span>
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">
+        Mes réalisations
+      </h2>
+      <p
+        class="text-on-surface-variant max-w-2xl mx-auto text-lg font-light leading-relaxed"
+      >
+        Survolez pour découvrir la transformation. Chaque pose est unique,
+        adaptée à la forme de vos yeux.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
-      {images.map((image) => (
-        <div class:list={[image.class, 'relative overflow-hidden rounded-xl group']}>
-          <img
-            alt={image.alt}
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            src={image.src}
-          />
-          {image.label && (
-            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-              <span class="text-on-primary font-headline text-xl italic">{image.label}</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8" data-stagger>
+      {
+        comparisons.map((item, i) => (
+          <div class="polaroid-group" data-animate style={`--i:${i}`}>
+            {/* Stacked polaroid container */}
+            <div class="relative h-[420px] md:h-[480px]">
+              {/* Before (back card) */}
+              <div class="polaroid-before absolute inset-0 w-[88%] rounded-xl overflow-hidden shadow-lg shadow-on-surface/10 border border-outline-variant/10 bg-surface-container-lowest">
+                <div class="h-full p-2.5 pb-14">
+                  <img
+                    src={item.before}
+                    alt={`Avant - ${item.alt}`}
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="absolute bottom-4 left-5 text-xs font-label font-bold tracking-widest uppercase text-outline">
+                  Avant
+                </span>
+              </div>
+
+              {/* After (front card, overlapping) */}
+              <div class="polaroid-after absolute inset-0 left-[12%] w-[88%] rounded-xl overflow-hidden shadow-xl shadow-on-surface/15 border border-outline-variant/10 bg-surface-container-lowest">
+                <div class="h-full p-2.5 pb-14">
+                  <img
+                    src={item.after}
+                    alt={`Après - ${item.alt}`}
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="absolute bottom-4 right-5 text-xs font-label font-bold tracking-widest uppercase text-primary">
+                  Après
+                </span>
+                <span class="absolute bottom-4 left-5 material-symbols-outlined text-secondary text-base">
+                  auto_awesome
+                </span>
+              </div>
             </div>
-          )}
-        </div>
-      ))}
+
+            {/* Caption */}
+            <div class="mt-5 text-center">
+              <h3 class="font-headline text-xl text-on-surface">
+                {item.label}
+              </h3>
+              <p class="text-sm text-on-surface-variant">{item.technique}</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="https://www.instagram.com/celiac_techniciennedecils07260/" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline underline-offset-8 transition-all inline-flex items-center gap-2 group">
+    <div class="mt-14 text-center" data-animate>
+      <a
+        href="https://www.instagram.com/celiac_techniciennedecils07260/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary font-bold hover:underline underline-offset-8 transition-all inline-flex items-center gap-2 group"
+      >
         Voir plus sur Instagram
-        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+        <span
+          class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          >arrow_right_alt</span
+        >
       </a>
     </div>
   </div>
 </section>
+
+<style>
+  .polaroid-before {
+    transform: rotate(-3deg) translateX(-4%);
+    transition:
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+  }
+
+  .polaroid-after {
+    transform: rotate(2deg) translateX(4%);
+    transition:
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+
+  /* On hover: "before" card arcs up and over to land in front */
+  .polaroid-group:hover .polaroid-before {
+    animation: card-to-front 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .polaroid-group:hover .polaroid-after {
+    transform: rotate(-1deg) translateX(-4%) translateY(6px);
+    box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+  }
+
+  @keyframes card-to-front {
+    0% {
+      transform: rotate(-3deg) translateX(-4%) translateY(0);
+      z-index: 1;
+    }
+    40% {
+      transform: rotate(0deg) translateX(-28%) translateY(-28px);
+      z-index: 3;
+    }
+    100% {
+      transform: rotate(2deg) translateX(8%) translateY(-6px);
+      z-index: 3;
+      box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  /* Touch devices */
+  @media (hover: none) {
+    .polaroid-group:active .polaroid-before {
+      animation: card-to-front 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .polaroid-group:active .polaroid-after {
+      transform: rotate(-1deg) translateX(-4%) translateY(6px);
+      box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.06);
+      z-index: 1;
+    }
+  }
+</style>
