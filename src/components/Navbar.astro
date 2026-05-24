@@ -1,38 +1,46 @@
 ---
 interface NavLink {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 const links: NavLink[] = [
-  { label: 'Prestations', href: '#prestations' },
-  { label: 'Réalisations', href: '#realisations' },
-  { label: 'Mon Institut', href: '#institut' },
-  { label: 'Avis', href: '#avis' },
-  { label: 'Horaires', href: '#horaires' },
-]
+  { label: "Prestations", href: "#prestations" },
+  { label: "Réalisations", href: "#realisations" },
+  { label: "Mon Institut", href: "#institut" },
+  { label: "Avis", href: "#avis" },
+  { label: "Horaires", href: "#horaires" },
+];
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl transition-all duration-300">
+<nav
+  class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl transition-all duration-300"
+>
   <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-    <a href="/" class="text-2xl font-headline italic text-primary">
+    <a href="/" class="text-2xl font-headline italic text-[#7c1e43]">
       Célia C.
     </a>
 
     <div class="hidden md:flex items-center gap-8">
-      {links.map((link) => (
-        <a
-          href={link.href}
-          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200 tracking-wide"
-        >
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200 tracking-wide"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </div>
 
-    <a href="tel:+33648362240" class="hero-gradient text-on-primary px-6 py-2.5 rounded-full font-medium tracking-wide active:scale-95 transition-all duration-300 hover:opacity-90 inline-block">
+    <button
+      type="button"
+      data-booking-cta
+      class="hero-gradient text-on-primary px-6 py-2.5 rounded-full font-medium tracking-wide active:scale-95 transition-all duration-300 hover:opacity-90 inline-block cursor-pointer"
+    >
       Réserver
-    </a>
+    </button>
   </div>
 </nav>
 

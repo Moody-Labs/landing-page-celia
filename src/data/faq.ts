@@ -18,7 +18,7 @@ export const faqEntries: FaqEntry[] = [
   },
   {
     question: "Les extensions de cils abîment-elles les cils naturels ?",
-    answer: "Non, lorsqu'elles sont posées par une technicienne certifiée avec des produits professionnels adaptés. Je suis agréée RS6709 et j'utilise des techniques respectueuses du cil naturel. Un diagnostic personnalisé est réalisé avant chaque pose pour adapter le poids et la longueur des extensions à vos cils.",
+    answer: "Je suis agréée RS6709 et j'utilise des techniques respectueuses du cil naturel. Un diagnostic personnalisé est réalisé avant chaque pose pour adapter le poids et la longueur des extensions à vos cils.",
   },
   {
     question: "Comment prendre rendez-vous à l'institut à Rosières ?",
@@ -30,7 +30,7 @@ export const faqEntries: FaqEntry[] = [
   },
   {
     question: "Combien de temps dure une pose d'extensions de cils ?",
-    answer: "Une pose complète dure entre 1h30 et 2h selon la technique choisie. Un remplissage prend environ 45 minutes à 1h15. Je prends le temps nécessaire pour un résultat impeccable, c'est pourquoi je ne reçois qu'une seule cliente à la fois.",
+    answer: "Une pose complète dure environ 3 heures pour une première pose. Un remplissage prend environ 2 heures. Je prends le temps nécessaire pour un résultat impeccable, c'est pourquoi je ne reçois qu'une seule cliente à la fois.",
   },
   {
     question: "L'institut est-il accessible aux personnes à mobilité réduite ?",
