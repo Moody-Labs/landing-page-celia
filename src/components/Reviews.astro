@@ -9,9 +9,9 @@ interface Review {
 const reviews: Review[] = [
   {
     quote:
-      "Je vous recommande Célia les yeux fermés ! Elle est très professionnelle et très minutieuse. Elle prend le temps, avant chaque rendez-vous de faire un diagnostic pour savoir ce qui nous convient le mieux. On se sent vraiment écouté et en confiance. L'hygiène est irréprochable.",
-    name: "Jennifer",
-    initial: "J",
+      "Prestation très qualitative, Celia prend le temps de bien faire les choses avec beaucoup de délicatesse. Elle le résultat est toujours au rdv, n’hésitez pas à aller vous faire un petit glow-up pour les beaux jours 💎",
+    name: "Shenendo",
+    initial: "S",
     stars: 5,
   },
   {
@@ -80,19 +80,20 @@ const starIcons = Array.from({ length: 5 }, () => "star");
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 lg:auto-rows-fr">
       {/* Jennifer - grande carte avec image */}
       <div
-        class="md:col-span-3 lg:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden grid lg:grid-cols-2"
+        class="md:col-span-3 lg:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden relative flex flex-col lg:block"
       >
-        <div class="h-64 lg:h-full">
+        <div class="h-64 lg:h-auto lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
           <img
             class="w-full h-full object-cover"
             alt="Résultat d'une extension de cils mixte réalisée à l'institut de Célia C. à Rosières, Ardèche"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9JRrXjejQpJYAXYig3H86gKQJrLIrax75RWwtqcMq-pdPBYMN-e_w1seiNcwVUaS5YP6jgN5kP6BYuCiQ0XF1EXoVQ54FoSKP3d-_gkloYpIVQAdqfxkK7eDF_2MFHoq1rSvw8HDwI0Cqo-Axzfcnm4Sc_qtqM_I2nOxBizHXg3xAuGIbT9_JvviGHMcS84g1_7sYkIJTtZA4lgN3ocV4zu7AvBOyBOqIxDcNhCsVxIzxR3TqcUeZ0_bmY3Z36lSZoEFy3ZuUm1o"
+            src="./images/review-picture.jpg"
+            loading="lazy"
           />
         </div>
-        <div class="p-8 flex flex-col justify-center">
+        <div class="p-8 flex flex-col justify-center lg:ml-[50%] lg:h-full">
           <div class="flex gap-1 text-secondary mb-4">
             {
               starIcons.map(() => (
@@ -133,7 +134,9 @@ const starIcons = Array.from({ length: 5 }, () => "star");
               ))
             }
           </div>
-          <h4 class="font-headline text-xl text-on-surface mb-3">Sublime et naturel</h4>
+          <h4 class="font-headline text-xl text-on-surface mb-3">
+            Sublime et naturel
+          </h4>
           <p class="text-on-surface leading-relaxed italic mb-8">
             "{reviews[1].quote}"
           </p>
@@ -152,7 +155,9 @@ const starIcons = Array.from({ length: 5 }, () => "star");
           <span class="material-symbols-outlined text-4xl mb-4 opacity-30"
             >format_quote</span
           >
-          <h4 class="font-headline text-xl mb-3 opacity-80">Un regard sur mesure</h4>
+          <h4 class="font-headline text-xl mb-3 opacity-80">
+            Un regard sur mesure
+          </h4>
           <p class="text-lg font-headline italic leading-relaxed mb-8">
             "{reviews[2].quote}"
           </p>
@@ -180,7 +185,9 @@ const starIcons = Array.from({ length: 5 }, () => "star");
               ))
             }
           </div>
-          <h4 class="font-headline text-xl text-on-surface mb-3">Des conseils en or</h4>
+          <h4 class="font-headline text-xl text-on-surface mb-3">
+            Des conseils en or
+          </h4>
           <p class="text-on-surface leading-relaxed mb-8">
             "{reviews[3].quote}"
           </p>

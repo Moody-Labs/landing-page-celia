@@ -16,15 +16,15 @@ const comparisons: BeforeAfter[] = [
     technique: "Effet naturel",
   },
   {
-    before: "/images/avant-1.jpg",
-    after: "/images/apres-1.jpg",
+    before: "/images/avant-2.jpg",
+    after: "/images/apres-2.jpg",
     alt: "Avant/après pose mixte extension de cils à Rosières (07260), Ardèche",
     label: "Mixte",
     technique: "Naturel & dense",
   },
   {
-    before: "/images/avant-1.jpg",
-    after: "/images/apres-1.jpg",
+    before: "/images/avant-3.jpg",
+    after: "/images/apres-3.jpg",
     alt: "Avant/après volume russe extension de cils par Célia C. à Rosières, Ardèche",
     label: "Volume Russe",
     technique: "Densité maximale",
@@ -46,8 +46,10 @@ const comparisons: BeforeAfter[] = [
       <p
         class="text-on-surface-variant max-w-2xl mx-auto text-lg font-light leading-relaxed"
       >
-        Survolez pour découvrir la transformation. Chaque pose est unique,
-        adaptée à la forme de vos yeux.
+        <span class="md:hidden">Touchez</span><span class="hidden md:inline"
+          >Survolez</span
+        > pour découvrir la transformation. Chaque pose est unique, adaptée à la forme
+        de vos yeux.
       </p>
     </div>
 
@@ -88,6 +90,12 @@ const comparisons: BeforeAfter[] = [
                 <span class="absolute bottom-4 left-5 material-symbols-outlined text-secondary text-base">
                   auto_awesome
                 </span>
+                <div class="polaroid-hint md:hidden absolute top-[72%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-on-surface/70 backdrop-blur-sm rounded-full pl-2.5 pr-3.5 py-1.5 text-[10px] font-label font-semibold uppercase tracking-widest text-on-primary inline-flex items-center gap-1.5 shadow-lg pointer-events-none">
+                  <span class="material-symbols-outlined text-sm">
+                    touch_app
+                  </span>
+                  Toucher
+                </div>
               </div>
             </div>
 
@@ -181,30 +189,67 @@ const comparisons: BeforeAfter[] = [
   .polaroid-before.anim-out {
     animation: card-to-back 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  .polaroid-hint {
+    transform: rotate(-4deg);
+    transform-origin: center;
+    animation: hint-pulse 2.4s ease-in-out infinite;
+    transition: opacity 0.4s ease;
+  }
+
+  .polaroid-group.is-swapped .polaroid-hint,
+  .polaroid-group.has-interacted .polaroid-hint {
+    opacity: 0;
+  }
+
+  @keyframes hint-pulse {
+    0%,
+    100% {
+      transform: rotate(-4deg) scale(1);
+    }
+    50% {
+      transform: rotate(-4deg) scale(1.05);
+    }
+  }
 </style>
 
 <script>
-  document.querySelectorAll('.polaroid-group').forEach((group) => {
-    const before = group.querySelector('.polaroid-before') as HTMLElement
-    if (!before) return
+  const isCoarsePointer = window.matchMedia("(hover: none)").matches;
 
-    group.addEventListener('mouseenter', () => {
-      before.classList.remove('anim-out')
-      before.classList.add('anim-in')
-      group.classList.add('is-swapped')
-    })
+  document.querySelectorAll(".polaroid-group").forEach((group) => {
+    const before = group.querySelector(".polaroid-before") as HTMLElement;
+    if (!before) return;
 
-    group.addEventListener('mouseleave', () => {
-      before.classList.remove('anim-in')
-      before.classList.add('anim-out')
-      group.classList.remove('is-swapped')
-    })
+    const swap = () => {
+      before.classList.remove("anim-out");
+      before.classList.add("anim-in");
+      group.classList.add("is-swapped");
+    };
 
-    // Clean up class after reverse animation ends
-    before.addEventListener('animationend', (e) => {
-      if ((e as AnimationEvent).animationName === 'card-to-back') {
-        before.classList.remove('anim-out')
+    const unswap = () => {
+      before.classList.remove("anim-in");
+      before.classList.add("anim-out");
+      group.classList.remove("is-swapped");
+    };
+
+    if (isCoarsePointer) {
+      group.addEventListener("click", () => {
+        group.classList.add("has-interacted");
+        if (group.classList.contains("is-swapped")) {
+          unswap();
+        } else {
+          swap();
+        }
+      });
+    } else {
+      group.addEventListener("mouseenter", swap);
+      group.addEventListener("mouseleave", unswap);
+    }
+
+    before.addEventListener("animationend", (e) => {
+      if ((e as AnimationEvent).animationName === "card-to-back") {
+        before.classList.remove("anim-out");
       }
-    })
-  })
+    });
+  });
 </script>

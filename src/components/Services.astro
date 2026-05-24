@@ -167,27 +167,36 @@ const remplissages: RemplissageRow[] = [
         class="bg-surface-container-lowest rounded-xl shadow-xl shadow-on-surface/5 overflow-hidden"
       >
         <div
-          class="grid grid-cols-4 bg-surface-container p-6 text-xs font-label uppercase tracking-widest text-on-surface-variant"
+          class="grid grid-cols-[1.6fr_1fr_1fr_1fr] bg-surface-container px-4 py-4 md:px-6 md:py-6 text-[10px] md:text-xs font-label uppercase tracking-widest text-on-surface-variant"
         >
           <div>Prestation</div>
-          <div class="text-center">2 semaines</div>
-          <div class="text-center">3 semaines</div>
-          <div class="text-center">4 semaines</div>
+          <div class="text-center">
+            <span class="sm:hidden">2 sem.</span>
+            <span class="hidden sm:inline">2 semaines</span>
+          </div>
+          <div class="text-center">
+            <span class="sm:hidden">3 sem.</span>
+            <span class="hidden sm:inline">3 semaines</span>
+          </div>
+          <div class="text-center">
+            <span class="sm:hidden">4 sem.</span>
+            <span class="hidden sm:inline">4 semaines</span>
+          </div>
         </div>
         <div class="divide-y divide-outline-variant/10">
           {
             remplissages.map((r) => (
-              <div class="grid grid-cols-4 p-6 items-center hover:bg-surface-container-low transition-colors group">
-                <div class="font-headline text-lg group-hover:text-primary transition-colors">
+              <div class="grid grid-cols-[1.6fr_1fr_1fr_1fr] px-4 py-5 md:p-6 items-center hover:bg-surface-container-low transition-colors group">
+                <div class="font-headline text-base md:text-lg leading-tight group-hover:text-primary transition-colors">
                   {r.type}
                 </div>
-                <div class="text-center font-medium text-secondary">
+                <div class="text-center font-medium text-secondary whitespace-nowrap">
                   {r.sem2}
                 </div>
-                <div class="text-center font-medium text-secondary">
+                <div class="text-center font-medium text-secondary whitespace-nowrap">
                   {r.sem3}
                 </div>
-                <div class="text-center font-medium text-secondary">
+                <div class="text-center font-medium text-secondary whitespace-nowrap">
                   {r.sem4}
                 </div>
               </div>
