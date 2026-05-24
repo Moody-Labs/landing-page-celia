@@ -1,5 +1,5 @@
 export const SEO = {
-  siteUrl: 'https://example.com',
+  siteUrl: 'https://celia-cils.fr',
   title: 'Célia C. | Extension de Cils à Rosières, Ardèche (07260)',
   description: 'Technicienne de cils certifiée RS6709 à Rosières (07260), Ardèche. Pose d\'extensions cil à cil, mixte et volume russe. Résultat naturel, sur rendez-vous uniquement.',
   ogImagePath: '/og-image.jpg',
