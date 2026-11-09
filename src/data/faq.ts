@@ -30,7 +30,7 @@ export const faqEntries: FaqEntry[] = [
   },
   {
     question: "Combien de temps dure une pose d'extensions de cils ?",
-    answer: "Une pose complète dure environ 2h15 en mixte ou en volume russe, et environ 3 heures en cil à cil. Un remplissage prend environ 1h30. Je prends le temps nécessaire pour un résultat impeccable, c'est pourquoi je ne reçois qu'une seule cliente à la fois.",
+    answer: "Une pose complète dure environ 2h15, quelle que soit la technique. Un remplissage prend environ 1h30. Je prends le temps nécessaire pour un résultat impeccable, c'est pourquoi je ne reçois qu'une seule cliente à la fois.",
   },
   {
     question: "L'institut est-il accessible aux personnes à mobilité réduite ?",
